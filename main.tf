@@ -42,3 +42,13 @@ resource "azurerm_cosmosdb_sql_database" "database_id" {
   account_name        = azurerm_cosmosdb_account.db.name
   throughput          = 400
 }
+
+resource "azurerm_cosmosdb_sql_container" "collection_id" {
+  name                  = var.collection_id
+  resource_group_name   = azurerm_cosmosdb_account.db.resource_group_name
+  account_name          = azurerm_cosmosdb_account.db.name
+  database_name         = azurerm_cosmosdb_sql_database.database_id.name
+  partition_key_path    = "/title"
+  partition_key_version = 1
+  throughput            = 400
+}
