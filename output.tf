@@ -1,10 +1,20 @@
-# cosmos db table 
+# cosmos db collection 
 
-output "table_id" {
+output "collection_id" {
+  value = azurerm_cosmosdb_sql_container.collection_id.id
+}
+
+output "collection_name" {
+  value = azurerm_cosmosdb_sql_container.collection_id.name
+}
+
+# cosmos db conatainer
+
+output "container_id" {
   value = azurerm_cosmosdb_sql_database.database_id.id
 }
 
-output "table_name" {
+output "container_name" {
   value = azurerm_cosmosdb_sql_database.database_id.name
 }
 

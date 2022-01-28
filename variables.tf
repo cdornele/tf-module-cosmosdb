@@ -58,5 +58,12 @@ variable "tags" {
 
 variable "database_ID" {
   type = string
-  description = "Specifies the name of the Cosmos DB Table"
+  description = "Specifies the name of the Cosmos DB Container"
+}
+
+# cosmos db collections 
+
+variable "collection_ID" {
+  type = string
+  description = "Specifies the name of the Cosmos DB Collection"
 }
